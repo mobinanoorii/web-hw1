@@ -16,5 +16,6 @@ docker network connect project-network docker-nginx --alias nginx
 the golang server will log the incoming requests.
 to see the logs of the server u can use the docker command :
 ```bash
-docker run -p 8080:8080 -d --name gateway-server gateway-server
+docker run -d --name gateway-server gateway-server
+docker network connect project-network gateway-server --alias gateway-server
 ```
