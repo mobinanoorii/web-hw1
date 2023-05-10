@@ -20,5 +20,5 @@ docker logs -f gateway-server
 ## Nginx inital setup 
 start the Nginx container and connect it to the network created
 ```bash
-docker run --name nginx -p 80:80 -v `pwd`/default.conf:/etc/nginx/conf.d/default.conf -d nginx
+docker run --name nginx --network=project-network -p 80:80 -v `pwd`/default.conf:/etc/nginx/conf.d/default.conf -d nginx
 ```
