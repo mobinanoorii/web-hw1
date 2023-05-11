@@ -14,3 +14,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+
+  redis:
+    image: redis:latest
+
+  req_pq:
+    build:
+      context: .
+      dockerfile: auth/req_pq/Dockerfile
+
+  req_DH_params:
+    build:
+      context: .
+      dockerfile: auth/req_DH_params/Dockerfile
