@@ -26,8 +26,7 @@ docker logs -f gateway-server
 And you can use these example requests to test the app: 
 ```bash
 #GET
-curl --location 'http://localhost:80' \
---data ''
+curl --location 'http://localhost:80'
 
 #POST
 curl --location 'http://localhost:80?sss=deeffer&sdwefsev=aaa&name=amir' \
