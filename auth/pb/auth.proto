@@ -1,0 +1,38 @@
+
+syntax = "proto3";
+option go_package = "github.com/monkrus/grpc-from0;grpc_from0";
+
+message ServerRequest {
+    string nonce = 1;
+    int32 message_id = 2;
+}
+
+message ServerResponse {
+    string nonce = 1;
+    string server_nonce = 2;
+    int32 message_id = 3;
+    int32 p = 4;
+    int32 g = 5;
+}
+
+message ClientRequest {
+    string nonce = 1;
+    string server_nonce = 2;
+    int32 A = 3;
+    int32 message_id = 4;
+}
+
+message ClientResponse {
+    string nonce = 1;
+    string server_nonce = 2;
+    int32 message_id = 3;
+    int32 B = 4;
+}
+
+service req_pq {
+    rpc Server (ServerRequest) returns (ServerResponse);
+}
+
+service req_DH_params {
+    rpc Client (ClientRequest) returns (ClientResponse);
+}
